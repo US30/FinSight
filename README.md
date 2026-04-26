@@ -10,7 +10,7 @@ The repository is organized as one end-to-end project: ingestion and retrieval l
 - Preserves both narrative text and table-heavy financial sections
 - Uses a multi-step agent flow for retrieval, analysis, calculation, and validation
 - Produces a structured financial payload for dashboard rendering
-- Visualizes summary metrics, trends, and segment distributions in a connected frontend
+- Visualizes summary metrics, trends, and segment distributions in a connected frontend dashboard
 
 ## System Architecture
 
