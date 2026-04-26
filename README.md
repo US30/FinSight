@@ -29,6 +29,17 @@ SEC Filings -> Parsing + Chunking -> Embeddings -> Qdrant Retrieval
            -> FastAPI Service -> React Dashboard
 ```
 
+## SEC Filing Corpus
+
+The project is designed around SEC EDGAR annual and quarterly disclosures, with an emphasis on:
+
+- `10-K` annual reports
+- `10-Q` quarterly reports
+- Filing sections such as MD&A, risk factors, financial statements, and footnotes
+- Mixed-format source material containing narrative text, tabular disclosures, HTML markup, XML/XBRL artifacts, and PDF exports
+
+According to the master project documentation, the intended corpus scale is approximately `9.5 GB` of raw SEC filing data spanning multiple sectors and years. The ingestion layer is therefore structured for large-volume sanitization and chunk generation rather than small-file document parsing.
+
 ## Core Technical Components
 
 ### 1. Ingestion Pipeline
