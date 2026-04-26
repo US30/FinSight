@@ -1,0 +1,89 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-primary:    #070b14;
+  --bg-secondary:  #0c1220;
+  --bg-card:       #0f1629;
+  --bg-card-hover: #131d35;
+  --border:        #1a2744;
+  --border-bright: #243660;
+
+  --cyan:    #00d4ff;
+  --cyan-dim: #00a8cc;
+  --purple:  #7c3aed;
+  --green:   #00e676;
+  --amber:   #ffab40;
+  --red:     #ff5252;
+  --blue:    #448aff;
+
+  --text-primary:   #e8edf5;
+  --text-secondary: #8899bb;
+  --text-muted:     #4a5a7a;
+
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan-dim); }
+
+/* Animations */
+@keyframes pulse-cyan {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,212,255,0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(0,212,255,0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scanner {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+
+.animate-slide-in  { animation: slide-in 0.4s ease both; }
+.animate-fade-in   { animation: fade-in 0.3s ease both; }
+.spinner { animation: spin 0.9s linear infinite; }
+
+/* Utility */
+.mono { font-family: var(--font-mono); }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Dropdown option colours (Chromium) */
+select option {
+  background: #0f1629;
+  color: #e8edf5;
+}
+select option:disabled {
+  color: #4a5a7a;
+}

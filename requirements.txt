@@ -1,0 +1,42 @@
+# ---------------------------------------------------------------------------
+# FinSight — Python dependencies
+# Target: Python 3.11+, NVIDIA H100, CUDA 12.x
+# ---------------------------------------------------------------------------
+
+# --- Orchestration ---
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-huggingface>=0.0.6
+langchain-qdrant>=0.1.0
+langgraph>=0.1.0
+
+# --- LLM & Embeddings ---
+transformers>=4.44.0
+accelerate>=0.33.0
+torch>=2.3.0          # install via: pip install torch --index-url https://download.pytorch.org/whl/cu121
+einops>=0.8.0         # required by some Gemma variants
+flash-attn>=2.6.0     # Flash Attention 2 — must be built from source for H100
+
+# --- Vector Database ---
+qdrant-client>=1.10.0
+
+# --- Document Parsing ---
+unstructured[pdf]>=0.15.0
+pdf2image>=1.17.0
+pytesseract>=0.3.13
+markdownify>=0.13.1
+
+# --- Safe Math Evaluation ---
+numexpr>=2.10.0
+
+# --- Frontend / API ---
+fastapi>=0.111.0
+uvicorn>=0.30.0
+
+# --- Data ---
+pandas>=2.2.0
+sec-edgar-downloader>=5.0.0
+
+# --- Config & Utils ---
+python-dotenv>=1.0.0
+typing-extensions>=4.12.0
